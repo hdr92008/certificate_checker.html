@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Certificate Checker</title>
+</head>
+<body>
+    <h1>QR Code Certificate Checker</h1>
+    
+    <!-- Input bar -->
+    <input type="text" id="certificateInput" placeholder="Enter certificate number">
+
+    <!-- Check button -->
+    <button onclick="checkCertificate()">Check</button>
+
+    <!-- Result message -->
+    <div id="resultMessage"></div>
+
+    <!-- Instagram contact message -->
+    <p>Contact us on Instagram @bahareimdad for any kind of information</p>
+
+    <script>
+        // JavaScript code to handle user input and display appropriate messages
+        function checkCertificate() {
+            const certificateNumber = document.getElementById('certificateInput').value;
+            const revokedNumbers = [123, 456, 789];
+
+            if (revokedNumbers.includes(parseInt(certificateNumber))) {
+                document.getElementById('resultMessage').innerText = "This certificate has been revoked due to violation of terms and conditions";
+            } else {
+                document.getElementById('resultMessage').innerText = "This is an original certificate";
+            }
+        }
+    </script>
+</body>
+</html>
